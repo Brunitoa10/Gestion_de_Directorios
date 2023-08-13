@@ -40,7 +40,7 @@ public class Aplicacion {
 		});
 	}
 
-	
+
 	public Aplicacion() {
 		initialize();
 	}
@@ -50,7 +50,7 @@ public class Aplicacion {
 	 */
 	private void initialize() {
 		program = new mainLogic();
-		
+
 		frmGestionDirectorios = new JFrame();
 		frmGestionDirectorios.setIconImage(Toolkit.getDefaultToolkit().getImage("\\Proyecto_127278_132735\\Documentacion\\Imagenes\\IconImagen.jpg"));
 		frmGestionDirectorios.setResizable(false);
@@ -59,11 +59,11 @@ public class Aplicacion {
 		frmGestionDirectorios.setBounds(100, 100, 708, 393);
 		frmGestionDirectorios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmGestionDirectorios.getContentPane().setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 45, 518, 308);
 		frmGestionDirectorios.getContentPane().add(scrollPane);
-		
+
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
 		scrollPane.setViewportView(textArea);
@@ -79,7 +79,7 @@ public class Aplicacion {
 		JButton btnAltura = new JButton("Altura del arbol");
 		JButton btnProfundidad = new JButton("Profundidad");
 		JButton btnImprimirContenido = new JButton("Imprimir Archivos");
-		
+
 		//Deshabilitando botones
 		btnObtenerRutaAbsoluta.setEnabled(false);
 		btnAncestroComun.setEnabled(false);
@@ -90,7 +90,7 @@ public class Aplicacion {
 		btnAltura.setEnabled(false);
 		btnProfundidad.setEnabled(false);
 		btnImprimirContenido.setEnabled(false);
-		
+
 		btnSetArbol.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnSetArbol.setToolTipText("Ingrese la ruta para formar el arbol");
 		btnSetArbol.addActionListener(new ActionListener() {
@@ -116,8 +116,8 @@ public class Aplicacion {
 		});
 		btnSetArbol.setBounds(10, 11, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnSetArbol);
-		
-		
+
+
 		textEntrada = new JTextField();
 		textEntrada.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {		
@@ -128,7 +128,7 @@ public class Aplicacion {
 		textEntrada.setBounds(163, 11, 519, 21);
 		frmGestionDirectorios.getContentPane().add(textEntrada);
 		textEntrada.setColumns(10);
-		
+
 		//Imprimir archivos
 		btnImprimirContenido.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnImprimirContenido.addActionListener(new ActionListener() {
@@ -145,14 +145,14 @@ public class Aplicacion {
 		});
 		btnImprimirContenido.setBounds(538, 43, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnImprimirContenido);
-		
+
 		//Profundidad
 		btnProfundidad.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnProfundidad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String path = null;
 				path = JOptionPane.showInputDialog("Ingrese ruta del directorio/archivo: ");
-				
+
 				if(path.isEmpty()) {
 					textArea.setText("ERROR: Ingrese una ruta valida.");
 				}else {
@@ -162,7 +162,7 @@ public class Aplicacion {
 		});
 		btnProfundidad.setBounds(538, 95, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnProfundidad);
-		
+
 		//Altura del arbol
 		btnAltura.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnAltura.addActionListener(new ActionListener() {
@@ -172,7 +172,7 @@ public class Aplicacion {
 		});
 		btnAltura.setBounds(538, 121, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnAltura);
-		
+
 		//Imprimir subDirectorios
 		btnImprimirSubdirectorios.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnImprimirSubdirectorios.addActionListener(new ActionListener() {
@@ -184,12 +184,12 @@ public class Aplicacion {
 				}else {
 					textArea.setText(program.printSubDirectory(path));
 				}
-				
+
 			}
 		});
 		btnImprimirSubdirectorios.setBounds(538, 69, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnImprimirSubdirectorios);
-		
+
 		//Grado del nodo
 		btnGradoNodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -207,8 +207,8 @@ public class Aplicacion {
 		btnGradoNodo.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnGradoNodo.setBounds(538, 147, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnGradoNodo);
-		
-		
+
+
 
 		//Grado del arbol
 		btnGradoArbol.addActionListener(new ActionListener() {
@@ -220,58 +220,58 @@ public class Aplicacion {
 		btnGradoArbol.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnGradoArbol.setBounds(538, 173, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnGradoArbol);
-		
+
 		//Listar
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					textArea.setText(program.list());	
+				textArea.setText(program.list());	
 			}
 		});
 		btnListar.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnListar.setBounds(538, 197, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnListar);
-		
-		
-		
+
+
+
 		//Ancestro comun
 		btnAncestroComun.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnAncestroComun.setBounds(538, 222, 144, 23);
 		frmGestionDirectorios.getContentPane().add(btnAncestroComun);
-		
+
 		btnAncestroComun.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String ruta1 = null;
-						String ruta2 = null;
-						ruta1 = JOptionPane.showInputDialog("Ruta del primer directorio: ");
-						if(ruta1.isEmpty()) {
-							textArea.setText("ERROR primer directorio: Ingrese una ruta valida.");
+			public void actionPerformed(ActionEvent e) {
+				String ruta1 = null;
+				String ruta2 = null;
+				ruta1 = JOptionPane.showInputDialog("Ruta del primer directorio: ");
+				if(ruta1.isEmpty()) {
+					textArea.setText("ERROR primer directorio: Ingrese una ruta valida.");
+				}else {
+					ruta2 = JOptionPane.showInputDialog("Ruta del segundo directorio: ");
+					if(ruta2.isEmpty()) {
+						textArea.setText("ERROR segundo directorio: Ingrese una ruta valida");
+					}else {
+						if(ruta1.equals(textEntrada.getText()) || ruta2.equals(textEntrada.getText())) {
+							textArea.setText("ERROR: ancestro propio");
 						}else {
-							ruta2 = JOptionPane.showInputDialog("Ruta del segundo directorio: ");
-							if(ruta2.isEmpty()) {
-								textArea.setText("ERROR segundo directorio: Ingrese una ruta valida");
-							}else {
-								if(ruta1.equals(textEntrada.getText()) || ruta2.equals(textEntrada.getText())) {
-									textArea.setText("ERROR: ancestro propio");
-								}else {
-									textArea.setText("El ancestro en comun es: "+ program.closeCommonAncestor(ruta1, ruta2).element().getKey());
-								}
-								
-							}
+							textArea.setText("El ancestro en comun es: "+ program.closeCommonAncestor(ruta1, ruta2).element().getKey());
 						}
+
 					}
-				});
-		
-		
+				}
+			}
+		});
+
+
 		//Ruta absoluta
-        btnObtenerRutaAbsoluta.setFont(new Font("Tahoma", Font.PLAIN, 11));
-        btnObtenerRutaAbsoluta.setBounds(538, 247, 144, 23);
-        frmGestionDirectorios.getContentPane().add(btnObtenerRutaAbsoluta);
-        btnObtenerRutaAbsoluta.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	String ruta1 = null;
+		btnObtenerRutaAbsoluta.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnObtenerRutaAbsoluta.setBounds(538, 247, 144, 23);
+		frmGestionDirectorios.getContentPane().add(btnObtenerRutaAbsoluta);
+		btnObtenerRutaAbsoluta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String ruta1 = null;
 				String ruta2 = null;
 				ruta1 = JOptionPane.showInputDialog("Ruta ruta relativa: ");
-                if(ruta1.isEmpty()) {
+				if(ruta1.isEmpty()) {
 					textArea.setText("ERROR ruta 1: Ingrese una ruta valida.");
 				}else {
 					ruta2 = JOptionPane.showInputDialog("Ruta absoluta: ");
@@ -281,8 +281,7 @@ public class Aplicacion {
 						textArea.setText("La nueva ruta es: "+ program.getAbsoluteAddress(ruta1, ruta2));
 					}
 				}
-        }
-
-    });
+			}
+		});
 	}
 }
