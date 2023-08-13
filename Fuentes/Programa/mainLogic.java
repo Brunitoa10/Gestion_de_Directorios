@@ -35,7 +35,6 @@ public class mainLogic {
 	 * @param Path ruta para formar el arbol
 	 * @return Tree
 	 */
-	//Optimizad0 2023 Agosto Bruno Parisi
 	public Tree<Entry<String, PositionList<String>>> createTree(String path) {
 
 		Tree<Entry<String, PositionList<String>>> tree = new ArbolGenerico<>();
@@ -66,7 +65,6 @@ public class mainLogic {
 	 * @param path ruta ingresada por parametro desde la interfaz grafica
 	 * @return tree subArbol del arbol general
 	 */
-	//Optimizado 2023 Agosto Bruno Parisi
 	private void subTree(Tree<Entry<String, PositionList<String>>> tree,Position<Entry<String, PositionList<String>>> p, Directorio d) {
 		try {
 			for (String archive : d.archivosDelDirectorio()) {
